@@ -1,0 +1,18 @@
+<% layout('boilerplate') -%>
+
+<style>
+.wpwl-wrapper-brand{
+    visibility: hidden;
+}
+.wpwl-label-brand{
+    visibility: hidden;
+}
+</style>
+
+
+<script>
+
+
+</script>
+<script src="https://oppwa.com/v1/paymentWidgets.js?checkoutId=<%=checkoutID %>"> </script>
+<form action="http://localhost:3000/payment/status" class="paymentWidgets" data-brands="VISA MASTER"></form>
