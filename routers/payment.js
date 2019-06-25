@@ -5,10 +5,10 @@ const axios = require('axios');
 const router = express.Router();
 var crypto = require('crypto');
 
-const userId = '8ac9a4c8665d0481016677f997c274f0';
-const passsword = 'MFzqmGkYp3';
-const entityId = '8ac9a4c8665d0481016677fb3eb77508';
-const isTest = false;
+const userId = '8a8294175060823a015060866a48002c';
+const passsword = 'ZR9zWyRP';
+const entityId = '8a82941750616e5a01506185ccc3007c';
+const isTest = true;
 
 router.get('/checkout', function(req, res) {
 	request(function(responseData) {
@@ -32,12 +32,7 @@ function request(callback) {
 		paymentType: 'DB',
 		merchantTransactionId: random,
 		'customer.email': 'hussam@gmail.com',
-		'customer.givenName': 'hussamadin',
-		'customer.surname': 'Ahmad',
-		'billing.street1': 'Oliayah',
-		'billing.city': 'Riyadh',
-		'billing.state': 'Central',
-		'billing.country': 'SA'
+		testMode: 'EXTERNAL'
 	});
 
 	// var d = {
@@ -102,7 +97,7 @@ function resultRequest(resourcePath, callback) {
 	path += '&authentication.entityId=' + entityId;
 	const host = isTest ? 'test.oppwa.com' : 'oppwa.com';
 
-	const url = 'https://oppwa.com' + path;
+	const url = 'https://test.oppwa.com' + path;
 
 	axios
 		.get(url)
